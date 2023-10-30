@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Object-Oriented-Programming.iml" filepath="$PROJECT_DIR$/.idea/Object-Oriented-Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/task1_1.3/task1_1.3.iml" filepath="$PROJECT_DIR$/week1/task1_1.3/task1_1.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/task2_1.2/task2_1.2.iml" filepath="$PROJECT_DIR$/week1/task2_1.2/task2_1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/task2_1.3/task2_1.3.iml" filepath="$PROJECT_DIR$/week1/task2_1.3/task2_1.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/task3_1.2/task3_1.2.iml" filepath="$PROJECT_DIR$/week1/task3_1.2/task3_1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/task3_1.3/task3_1.3.iml" filepath="$PROJECT_DIR$/week1/task3_1.3/task3_1.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/week1/week1.iml" filepath="$PROJECT_DIR$/week1/week1.iml" />
+    </modules>
+  </component>
+</project>
