@@ -1,13 +1,11 @@
-public class CarTest {
+public class CarDriver {
     public static void main(String[] args) {
-        // Create a Car object
-        Car myCar = new Car("Sedan", 60.0f, 160.0f, 0.0f, 200.0f); // Adjust minSpeed and maxSpeed
+        Car myCar = new Car("Sedan", 60.0f, 140.0f, 0.0f, 180.0f);
 
-        // Test the Car object's methods
         myCar.accelerate();
         System.out.println("Speed: " + myCar.getSpeed());
 
-        myCar.decelerate(20);
+        myCar.decelerate(10);
         System.out.println("Speed after deceleration: " + myCar.getSpeed());
 
         myCar.fillTank();
@@ -16,9 +14,8 @@ public class CarTest {
         System.out.println("Car type: " + myCar.getTypeName());
         System.out.println("Top speed: " + myCar.getTopSpeed());
 
-        // Test cruise control
-        myCar.setTargetSpeed(120.0f); // Set the target speed
-        boolean cruiseControlEnabled = myCar.turnOnCruiseControl(); // Attempt to turn on cruise control
+        myCar.setTargetSpeed(190.0f);
+        boolean cruiseControlEnabled = myCar.turnOnCruiseControl();
 
         if (cruiseControlEnabled) {
             System.out.println("Cruise control is ON. Target speed: " + myCar.getTargetSpeed());
@@ -26,10 +23,10 @@ public class CarTest {
             System.out.println("Cruise control cannot be turned on. Target speed is unreachable.");
         }
 
-        myCar.accelerate(); // Accelerate with cruise control
-        System.out.println("Speed with cruise control: " + myCar.getSpeed());
+        myCar.adjustSpeedWithCruiseControl();
+        System.out.println("Speed with cruise control: " + myCar.getTargetSpeed());
 
-        myCar.turnOffCruiseControl(); // Turn off cruise control
+        myCar.turnOffCruiseControl();
         System.out.println("Cruise control is OFF.");
     }
 }
