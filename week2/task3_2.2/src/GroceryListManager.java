@@ -3,40 +3,62 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.*;
 
 public class GroceryListManager {
-    private Map <String, Double> groceryList = new HashMap<>();
+    private Map <String, List<String>> groceryList = new HashMap<>();
 
-    public void addItem(String item, double cost) {
-        groceryList.put(item, cost);
+    public void addItemWithCategory(String item, String category) {
+        if (!groceryList.containsKey(category)) {
+            groceryList.put(category, new ArrayList<>());
+        }
+        groceryList.get(category).add(item);
     }
     public void removeItem(String item) {
-        groceryList.remove(item);
+        for (List<String> items : groceryList.values()) {
+            items.remove(item);
+        }
     }
     public void displayList() {
         System.out.println("Grocery List: ");
-        int i = 1;
-        for (Map.Entry<String, Double> entry: groceryList.entrySet()) {
-            System.out.println(i + ". " + entry.getKey() + " - €" + entry.getValue());
-            i++;
+        for (Map.Entry<String, List<String>> entry: groceryList.entrySet()) {
+            System.out.println(entry.getKey() + ":");
+            int i = 1;
+            for (String item : entry.getValue()) {
+                System.out.println(i + ". " + item);
+                i++;
+            }
+        }
+    }
+
+    public void displayByCategory(String category) {
+        if (groceryList.containsKey(category)) {
+            System.out.println("Items in the " + category + " category:");
+            List<String> items = groceryList.get(category);
+            for (int i = 0; i < items.size(); i++) {
+                System.out.println((i + 1) + ". " + items.get(i));
+            }
+        } else {
+          System.out.println("Category not found: " + category);
         }
     }
     public boolean checkItem(String item) {
-        return groceryList.containsKey(item);
-    }
-    public double calculateTotalCost() {
-        double sum = 0.0;
-        for (Double cost : groceryList.values()) {
-            sum += cost;
+        for (List<String> items: groceryList.values()) {
+            if (items.contains(item)) {
+                return true;
+            }
         }
-        return sum;
+        return false;
     }
+
+
     public static void main(String [] args) {
         GroceryListManager manager = new GroceryListManager();
-        manager.addItem("Apples", 1.99);
-        manager.addItem("Milk", 0.99);
-        manager.addItem("Eggs", 2.69);
-        manager.addItem("Bread", 2.99);
+        manager.addItemWithCategory("Apples", "Fruits");
+        manager.addItemWithCategory("Milk", "Dairy");
+        manager.addItemWithCategory("Bread", "Bakery");
+        manager.addItemWithCategory("Oranges", "Fruits");
+        manager.addItemWithCategory("Butter", "Dairy");
 
         manager.displayList();
 
@@ -48,9 +70,8 @@ public class GroceryListManager {
         manager.removeItem(itemToRemove);
         System.out.println("\nRemoving \"" + itemToRemove + "\" from the list? " ) ;
 
-        double sum = manager.calculateTotalCost();
-        System.out.println("Total price of the grocery list: " + sum);
-        manager.displayList();
+        manager.displayByCategory("Dairy");
+        manager.displayByCategory("Fruits");
     }
 }
 
