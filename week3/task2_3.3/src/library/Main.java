@@ -1,8 +1,9 @@
-package library.Main;
+package library;
 
-import library.model.LibraryMember;
 import library.model.Book;
-import system.Library;
+import library.model.LibraryMember;
+import library.system.Library;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,9 +23,12 @@ public class Main {
         library.addBook(book2);
         library.addBook(book3);
 
+        library.addMember(member1);
+        library.addMember(member2);
 
-        library.borrowBook("Sans Famille");
+        library.borrowBook(member1, book1);
+        library.borrowBook(member2, book2);
 
-        library.returnBook(book2);
+        library.returnBook(member2, book2);
     }
 }
