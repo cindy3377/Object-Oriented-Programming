@@ -1,14 +1,10 @@
 Question:
 
-Familiarize yourself with a few distributions that could be used in the simulator for experimentation. These distributions could be used in the following situations. Find answers online. You can also study other distributions. For example, Google "real-life example of normal distribution".
-Normal Distribution: Used to model many natural phenomena, such as height or test scores. For example, human height tends to follow a normal distribution, with most people clustering around the average height.
+Why can't a Singleton object be created from outside the Singleton class using the new operation?
 
 Answer:
 
-Binomial Distribution: Applied to experiments with a fixed number of trials, each having two possible outcomes. For instance, the number of successes (e.g., heads in coin tosses) in a series of coin flips.
+A Singleton object cannot be created from outside the Singleton class using the new operation because the Singleton class typically has a private constructor. The private constructor restricts external classes from directly instantiating the Singleton class. 
 
-Exponential Distribution: Models the time between events in a Poisson process. It's suitable for scenarios like the time between customer arrivals at a service center.
+The only way to obtain an instance of the Singleton class is through a public static method within the class, enforcing the pattern's goal of having a single, globally accessible instance.
 
-Poisson Distribution: Describes the number of events occurring in fixed intervals when events are rare and random. An example is the number of phone calls received at a call center during a fixed time period.
-
-Understanding these distributions is crucial for simulating various real-world scenarios and capturing the randomness inherent in different processes.
