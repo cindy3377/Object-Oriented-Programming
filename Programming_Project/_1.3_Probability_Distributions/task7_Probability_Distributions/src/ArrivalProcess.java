@@ -2,7 +2,6 @@
 /* import eduni.distributions.Negexp; */
 
 import eduni.distributions.ContinuousGenerator;
-import eduni.distributions.Negexp;
 
 /* to add arrival events to the event list */
 public class ArrivalProcess {
@@ -24,13 +23,4 @@ public class ArrivalProcess {
         return eventTime;
     }
 
-    public static void main(String[] args) {
-        EventList eventList = new EventList();
-        ArrivalProcess arrivalProcess = new ArrivalProcess(new Negexp(10), eventList, EventType.ARR);
-
-        for (int i = 0; i < 10; i++) {
-            Clock.getInstance().setClock(arrivalProcess.generateNextEvent());
-        }
-        eventList.print();
-    }
 }
