@@ -28,5 +28,7 @@ public class Pet {
             x += ratio * deltaX;
             y += ratio * deltaY;
         }
+        this.x = targetX;
+        this.y = targetY;
     }
 }
