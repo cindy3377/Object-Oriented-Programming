@@ -1,4 +1,6 @@
-module com.example.task6_4 {
+module com.example.task6_4.view {
+    exports view;
+
     requires javafx.controls;
     requires javafx.fxml;
 

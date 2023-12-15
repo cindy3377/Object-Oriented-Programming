@@ -5,7 +5,6 @@ public class Note {
     private String content;
 
     public Note() {
-        // Default constructor
     }
 
     public Note(String title, String content) {
@@ -13,7 +12,6 @@ public class Note {
         this.content = content;
     }
 
-    // Getters and setters
 
     public String getTitle() {
         return title;
