@@ -6,7 +6,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import model.CurrencyModel;
 import view.CurrencyView;
-import model.CustomCurrency;
 
 import java.util.Currency;
 
