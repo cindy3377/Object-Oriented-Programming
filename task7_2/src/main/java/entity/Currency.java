@@ -1,11 +1,11 @@
-package model;
+package entity;
 
-public class CustomCurrency {
-    private String abbreviation;
-    private String name;
-    private double rate;
+public class Currency {
+    private final String abbreviation;
+    private final String name;
+    private final double rate;
 
-    public CustomCurrency(String abbreviation, String name, double rate) {
+    public Currency(String abbreviation, String name, double rate) {
         this.abbreviation = abbreviation;
         this.name = name;
         this.rate = rate;
